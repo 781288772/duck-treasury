@@ -41,7 +41,7 @@ export class UploadController {
         return {
             code: 200,
             msg: '上传成功',
-            url: `/${Date.now()}-${file.originalname}`,
+            url: `/static/${Date.now()}-${file.originalname}`,
              };
     }
 }

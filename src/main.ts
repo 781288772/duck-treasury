@@ -13,7 +13,7 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 // 静态资源访问
   app.useStaticAssets(join(__dirname, '../..', 'src/public/upload'),{
-  prefix: '/',  // 设置虚拟路径
+  prefix: '/static',  // 设置虚拟路径
 });
   app.use(express.json()); // For parsing application/json
   app.use(express.urlencoded({ extended: true })); // For parsing application/x-www-form-urlencoded
