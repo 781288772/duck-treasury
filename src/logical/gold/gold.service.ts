@@ -62,7 +62,7 @@ export class GoldService {
   }
 
     async findOne(id: number) {
-      const sql = `SELECT id,name,weight,type,unit_price as unitPrice,img,description FROM gold WHERE id = ${id}`;
+      const sql = `SELECT id,name,weight,type,price,unit_price as unitPrice,img,description,create_time as createTime FROM gold WHERE id = ${id}`;
       try {
      const result = await sequelize.query(sql, {type: Sequelize.QueryTypes.SELECT, logging: false, raw: false});
      return {
