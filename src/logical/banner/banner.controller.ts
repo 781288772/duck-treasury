@@ -12,7 +12,7 @@ export class BannerController {
     return this.bannerService.create(createBannerDto);
   }
 
-  @Get()
+  @Get('list')
   findAll() {
     return this.bannerService.findAll();
   }
