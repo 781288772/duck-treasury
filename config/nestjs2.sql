@@ -11,7 +11,7 @@
  Target Server Version : 50726
  File Encoding         : 65001
 
- Date: 27/07/2022 20:50:50
+ Date: 09/08/2022 16:28:30
 */
 
 SET NAMES utf8mb4;
@@ -67,6 +67,19 @@ INSERT INTO `article` VALUES (4, '因土关王', 'quis mollit velit reprehenderi
 INSERT INTO `article` VALUES (5, '取专林', 'magna quis do ex', 'af90b441-50fa-41bd-a8d6-b495466bed42', '0', '2022-07-11 10:49:17', '2022-07-11 10:49:17');
 INSERT INTO `article` VALUES (6, '角政京', 'laborum veniam quis', 'af90b441-50fa-41bd-a8d6-b495466bed42', '0', '2022-07-11 10:49:19', '2022-07-11 10:49:19');
 INSERT INTO `article` VALUES (7, '查你制律', 'dolor Duis', 'af90b441-50fa-41bd-a8d6-b495466bed42', '0', '2022-07-11 10:49:22', '2022-07-11 10:49:22');
+
+-- ----------------------------
+-- Table structure for banner
+-- ----------------------------
+DROP TABLE IF EXISTS `banner`;
+CREATE TABLE `banner`  (
+  `id` int(255) NOT NULL COMMENT 'id',
+  `src` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '图片地址',
+  `create_time` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` datetime(0) NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '更新时间',
+  `is_hidden` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '是否显示',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = MyISAM CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for commodity
