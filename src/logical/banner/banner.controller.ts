@@ -7,7 +7,7 @@ import { UpdateBannerDto } from './dto/update-banner.dto';
 export class BannerController {
   constructor(private readonly bannerService: BannerService) {}
 
-  @Post()
+  @Post('add')
   create(@Body() createBannerDto: CreateBannerDto) {
     return this.bannerService.create(createBannerDto);
   }
