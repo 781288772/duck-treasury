@@ -1,8 +1,8 @@
 import { HttpCode, Injectable, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
-import sequelize from '../../database/sequelize';
 import { CreateGoldDto } from './dto/create-gold.dto';
 import { UpdateGoldDto } from './dto/update-gold.dto';
+import sequelize from '../../database/sequelize';
 import * as Sequelize from 'sequelize';
 
 @Injectable()

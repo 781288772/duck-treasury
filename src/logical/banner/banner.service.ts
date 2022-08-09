@@ -1,6 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { CreateBannerDto } from './dto/create-banner.dto';
 import { UpdateBannerDto } from './dto/update-banner.dto';
+import sequelize from '../../database/sequelize';
+import * as Sequelize from 'sequelize';
 
 @Injectable()
 export class BannerService {
