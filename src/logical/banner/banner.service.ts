@@ -7,10 +7,19 @@ import * as Sequelize from 'sequelize';
 @Injectable()
 export class BannerService {
   async create(createBannerDto: CreateBannerDto) {
+    if(!createBannerDto.src){
+      return{
+        code:400,
+        result:{
+          msg:'图片不能为空',
+          success:false,
+        }
+      }
+    }
     const sql =`INSERT INTO banner (src) VALUES('${createBannerDto.src}')`;
     try{
-    const result =  await sequelize.query(sql, { type: Sequelize.QueryTypes.INSERT });
-    if(result){
+    await sequelize.query(sql, { logging: false});
+   
       return {
         code: 200,
         result:{
@@ -19,7 +28,7 @@ export class BannerService {
 
         }
       }
-    }
+    
     }catch(err){
       return {
         code: 503,
@@ -28,6 +37,8 @@ export class BannerService {
          msg:`Service error: ${err}`
     }
   }
+
+}
   
    
     
