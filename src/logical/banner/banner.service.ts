@@ -6,8 +6,31 @@ import * as Sequelize from 'sequelize';
 
 @Injectable()
 export class BannerService {
-  create(createBannerDto: CreateBannerDto) {
-    return 'This action adds a new banner';
+  async create(createBannerDto: CreateBannerDto) {
+    const sql =`INSERT INTO banner (src) VALUES('${createBannerDto.src}')`;
+    try{
+    const result =  await sequelize.query(sql, { type: Sequelize.QueryTypes.INSERT });
+    if(result){
+      return {
+        code: 200,
+        result:{
+          success:true,
+          msg:'操作成功'
+
+        }
+      }
+    }
+    }catch(err){
+      return {
+        code: 503,
+        result:{
+          success:false,
+         msg:`Service error: ${err}`
+    }
+  }
+  
+   
+    
   }
 
   findAll() {

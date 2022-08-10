@@ -9,6 +9,6 @@ export class CreateBannerDto {
  create_time:string;
  @Column
  update_time:string;
- @Column
+ @Column({ defaultValue:0 })
  is_hidden:boolean;
 }
