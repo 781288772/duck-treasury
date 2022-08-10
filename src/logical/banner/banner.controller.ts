@@ -1,15 +1,16 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UsePipes, HttpCode } from '@nestjs/common';
 import { BannerService } from './banner.service';
 import { CreateBannerDto } from './dto/create-banner.dto';
 import { UpdateBannerDto } from './dto/update-banner.dto';
-
+import { ValidationPipe } from '../../pipe/validation.pipe';
 @Controller('banner')
 export class BannerController {
   constructor(private readonly bannerService: BannerService) {}
-
+  @UsePipes(new ValidationPipe())
+  @HttpCode(200)
   @Post('add')
-  create(@Body() createBannerDto: CreateBannerDto) {
-    return this.bannerService.create(createBannerDto);
+  async create(@Body() CreateBannerDto: CreateBannerDto) {
+    return await this.bannerService.create(CreateBannerDto);
   }
 
   @Get('list')

@@ -6,17 +6,9 @@ import * as Sequelize from 'sequelize';
 
 @Injectable()
 export class BannerService {
-  async create(createBannerDto: CreateBannerDto) {
-    if(!createBannerDto.src){
-      return{
-        code:400,
-        result:{
-          msg:'图片不能为空',
-          success:false,
-        }
-      }
-    }
-    const sql =`INSERT INTO banner (src) VALUES('${createBannerDto.src}')`;
+  async create(createBannerDto: CreateBannerDto):Promise<any> {
+    const {src} = createBannerDto;
+    const sql =`INSERT INTO banner (src) VALUES('${src}')`;
     try{
     await sequelize.query(sql, { logging: false});
    
