@@ -8,7 +8,7 @@ import * as Sequelize from 'sequelize';
 export class BannerService {
   async create(createBannerDto: CreateBannerDto):Promise<any> {
     const {src} = createBannerDto;
-    const sql =`INSERT INTO banner (src) VALUES('${src}')`;
+    const sql =`INSERT INTO banner (src,is_hidden) VALUES('${src}',0)`;
     try{
     await sequelize.query(sql, { logging: false});
    
