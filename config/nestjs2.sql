@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : test
+ Source Server         : 本地
  Source Server Type    : MySQL
  Source Server Version : 50726
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 50726
  File Encoding         : 65001
 
- Date: 09/08/2022 16:28:30
+ Date: 15/11/2022 16:52:54
 */
 
 SET NAMES utf8mb4;
@@ -130,5 +130,19 @@ INSERT INTO `gold` VALUES (2, '济军号品着', 18, ' nostrud fugiat', 100, 180
 INSERT INTO `gold` VALUES (5, '123123', 12312312, ' 耳环', 123123, 1515928790376, '/static/1658905272973-icon.png', '2022-07-25 23:02:33', '2022-07-27 15:01:22', 'af90b441-50fa-41bd-a8d6-b495466bed42', '');
 INSERT INTO `gold` VALUES (6, '去它义准被期', 21, ' in ea reprehenderit commodo Ut', 88, 1848, '/static/1658907277592-wallhaven-2kvjdy.jpg', '2022-07-25 23:03:51', '2022-07-27 15:34:56', 'af90b441-50fa-41bd-a8d6-b495466bed42', '知月满叫图织金三党步白律适光表题。清江值中化装位流联约般带回气山决层。于全领合次一基给花效点更只八今眼影。油身五今领并与千种火定多成状。从空准市例究化大持活具便算。上积定义北型道部确得北南。数完强书石加但半局人行想。');
 INSERT INTO `gold` VALUES (12, '去它义准被期', 11, ' in ea reprehenderit commodo Ut', 11, 121, '', '2022-07-26 09:40:41', '2022-07-27 17:14:49', 'af90b441-50fa-41bd-a8d6-b495466bed42', '知月满叫图织金三党步白律适光表题。清江值中化装位流联约般带回气山决层。于全领合次一基给花效点更只八今眼影。油身五今领并与千种火定多成状。从空准市例究化大持活具便算。上积定义北型道部确得北南。数完强书石加但半局人行想。');
+
+-- ----------------------------
+-- Table structure for production
+-- ----------------------------
+DROP TABLE IF EXISTS `production`;
+CREATE TABLE `production`  (
+  `id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `price` int(10) NULL DEFAULT NULL,
+  `desiription` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `create_time` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
+  `update_time` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = MyISAM CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 SET FOREIGN_KEY_CHECKS = 1;
