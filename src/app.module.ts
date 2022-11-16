@@ -13,10 +13,10 @@ import { UploadController } from './logical/upload/upload.controller';
 import { ArticleModule } from './logical/article/article.module';
 import { GoldModule } from './logical/gold/gold.module';
 import { BannerModule } from './logical/banner/banner.module';
-import { ProductonModule } from './logical/producton/producton.module';
+import { ProductionModule } from './logical/production/production.module';
 
 @Module({
-  imports: [UserModule, AuthModule, ArticleModule, GoldModule, BannerModule, ProductonModule],
+  imports: [UserModule, AuthModule, ArticleModule, GoldModule, BannerModule, ProductionModule],
   controllers: [AppController, UserController, CommodityController, UploadController],
   providers: [AppService, CommodityService, UploadService],
 })
